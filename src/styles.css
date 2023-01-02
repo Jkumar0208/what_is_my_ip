@@ -1,5 +1,28 @@
+body {
+    background-color: rgb(126, 243, 243);
+}
+
 .center {
     display: flex;
     justify-content: center;
     margin-top: 100px;
+}
+
+#ipLogo {
+    width: 100px;
+}
+
+.cardHeader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cardHeaderText {
+    font-family: Patua One, cursive;
+    font-size: 2em;
+    margin-top: 0em;
+    padding-bottom: 1.3rem;
+    text-shadow: -1px 1px 2px #fff, 1px 1px 2px #fff, 1px -1px 0 #fff,
+        -1px -1px 0 #fff;
 }
