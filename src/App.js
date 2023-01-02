@@ -1,6 +1,7 @@
-import { Fragment, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import axios from 'axios';
-import './App.css';
+import "./styles.css";
+import Card from "./Card.js";
 
 function App() {
 
@@ -27,14 +28,9 @@ function App() {
 
 
   return (
-    <div className="App">
+    <div className="center">
 
-      <Fragment>
-        <h1>Your IP address is: {location.ip}</h1>
-        <p>You are currently located in: {location.region} </p>
-        <p>You are from: {location.country}</p>
-      </Fragment>
-
+      <Card ipAddress={location.ip} country={location.country} region={location.region} />
 
     </div>
   );
