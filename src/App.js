@@ -1,23 +1,41 @@
-import logo from './logo.svg';
+import { Fragment, useEffect, useState } from 'react';
+import axios from 'axios';
 import './App.css';
 
 function App() {
+
+  const [location, setLocation] = useState({});
+
+  const { REACT_APP_IPIFY_API_KEY } = process.env;
+
+  useEffect(() => {
+    let ipify;
+    axios
+      .get(`https://geo.ipify.org/api/v2/country?apiKey=${REACT_APP_IPIFY_API_KEY}`)
+      .then(({ data: ipifyData }) => {
+        ipify = ipifyData;
+        setLocation({
+          ip: ipify.ip,
+          region: ipify.location.region,
+          country: ipify.location.country
+        });
+      })
+      .catch((error) => {
+        console.log(error);
+      })
+  }, [REACT_APP_IPIFY_API_KEY]);
+
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
+      <Fragment>
+        <h1>Your IP address is: {location.ip}</h1>
+        <p>You are currently located in: {location.region} </p>
+        <p>You are from: {location.country}</p>
+      </Fragment>
+
+
     </div>
   );
 }
