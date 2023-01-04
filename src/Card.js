@@ -1,6 +1,6 @@
 import IpLogo from "./ip-logo.png";
 
-function Card(props) {
+function Card({ data: { ip, region, city, country } }) {
     return (
         <div>
             <div className="cardHeader">
@@ -10,12 +10,8 @@ function Card(props) {
             <div className="card text-center mb-3" style={{ width: "26.5rem" }}>
                 <img src="..." className="card-img-top" alt="..." />
                 <div className="card-body">
-                    <h5 className="card-title">Your IP address is:</h5>
-                    <p className="card-text">{props.ipAddress}</p>
-                    <h5 className="card-title">You are currently located in:</h5>
-                    <p className="card-text">{props.region}</p>
-                    <h5 className="card-title">You are from:</h5>
-                    <p className="card-text">{props.country}</p>
+                    <h6 className="card-title">Your IP address is: {ip}</h6>
+                    <h5 className="card-title">You are currently located in: {city}, {country}</h5>
                 </div>
             </div>
         </div>
