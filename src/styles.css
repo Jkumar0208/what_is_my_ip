@@ -48,6 +48,10 @@
     font-size: 2rem;
 }
 
+.ipData {
+    cursor: pointer;
+}
+
 /* required styles for leaflet */
 
 .leaflet-pane,
