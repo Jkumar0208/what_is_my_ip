@@ -23,7 +23,7 @@ function Card({ data: { ip, region, city, country } }) {
                             <FontAwesomeIcon
                                 icon={faCalendarAlt}
                                 style={{ marginRight: "0.3em" }}
-                            />We are the {DateTime.local().toLocaleString()}
+                            />Today's Date {DateTime.local().toLocaleString()}
                         </p>
                         <p><FontAwesomeIcon
                             icon={faClock}
