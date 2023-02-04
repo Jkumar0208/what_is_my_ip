@@ -89,7 +89,7 @@ function App() {
             <h1 className="errorText errorBig">
               There was a problem loading your ip/location data{" "}
               <span role="img" aria-label="poop emoji">
-                💩
+                ⚠️
               </span>
             </h1>
             <h2 className="errorText errorSmall">
